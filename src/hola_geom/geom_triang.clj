@@ -1,0 +1,15 @@
+(ns hola_geom.sintriang
+  (:require [quil.core :as q]
+            [quil.helpers.drawing :as d]
+            [quil.helpers.seqs :as s]
+            [quil.helpers.calc :as c]
+            [thi.ng.geom.types :as t]
+            [thi.ng.geom.rect :as r]
+            [thi.ng.geom.core :as g]
+            [thi.ng.geom.line :as l]
+            [thi.ng.geom.triangle :as tr]
+            [thi.ng.geom.core.utils :as u]
+            [thi.ng.geom.core.vector :as v]
+            [thi.ng.math.core :as m]
+            [plumbing.core :as p]
+            [plumbing.graph :as gr]))
