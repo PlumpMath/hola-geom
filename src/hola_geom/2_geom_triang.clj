@@ -20,7 +20,7 @@
   "Dibuja un ciclo completo de la función seno entre los puntos a y b"
   (let [xs (s/range-incl 0 360 1)
         ys (repeat 360 100)
-        line-args (d/line-join-points xs ys)]
+        line-args (d/line-join-points xs ys)] ;; Buscar como sustituir d/line-join-points
     (map #(apply l/line2 %) line-args)))
 
 
@@ -49,9 +49,21 @@
     (q/line a b c d)))
 
 (p/defnk vertex-shape [points]
+  (let [pts (s/seq->stream points)]
     (q/begin-shape)
-    (map #(apply q/vertex points))
-    (q/end-shape))
+   ;(q/vertex 500 500)
+   ;(q/vertex 600 600)
+   ;(q/vertex 700 500)
+
+
+   ; (dorun (map #(apply q/vertex points)))
+    (q/end-shape)))
+
+
+  ( map #(reduce v/vec2 %)  [[1 1][2 2][3 3]])
+
+(def a  (s/seq->stream (:points (l/linestrip2 [500 500] [600 600] [700 500]))))
+(a)
 
 
 
